@@ -1,13 +1,16 @@
+# Release name
+PRODUCT_RELEASE_NAME := spyder
+
 # Inherit device configuration for VZW Droid RAZR.
 $(call inherit-product, device/motorola/spyder/full_spyder.mk)
 
-# Inherit some common CM stuff.
-$(call inherit-product, vendor/cm/config/common_full_phone.mk)
+# Inherit some common SLIM stuff.
+$(call inherit-product, vendor/slim/config/common_full_phone.mk)
 
 #
 # Setup device specific product configuration.
 #
-PRODUCT_NAME := cm_spyder
+PRODUCT_NAME := slim_spyder
 PRODUCT_BRAND := verizon
 PRODUCT_DEVICE := spyder
 PRODUCT_DEVICE_PREFIX := cdma
@@ -15,6 +18,10 @@ PRODUCT_MODEL := XT912
 PRODUCT_MANUFACTURER := Motorola
 PRODUCT_RELEASE_NAME := DROID RAZR
 PRODUCT_SFX := vzw
+
+# Boot animation
+TARGET_SCREEN_HEIGHT := 960
+TARGET_SCREEN_WIDTH := 540
 
 UTC_DATE := $(shell date +%s)
 DATE := $(shell date +%Y%m%d)
@@ -28,4 +35,4 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
    PRODUCT_BRAND=${PRODUCT_BRAND} \
    BUILD_UTC_DATE= \
    PRODUCT_DEFAULT_LANGUAGE=en \
-   PRODUCT_DEFAULT_REGION=US \
+   PRODUCT_DEFAULT_REGION=US
